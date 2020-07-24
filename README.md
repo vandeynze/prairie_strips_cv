@@ -1,7 +1,8 @@
 # prairie_strips_cv
 <p style="text-align: center;">
-![](https://www.nrem.iastate.edu/research/STRIPS/files/resize/page/images/tama_county_ls_de_kok-mercado-675x506.jpg)  
- Figures for a contingent valuation study.
+![Prairie Strips](https://www.nrem.iastate.edu/research/STRIPS/files/resize/page/images/tama_county_ls_de_kok-mercado-675x506.jpg)  
+
+Figures for a contingent valuation study.
  </p>
  
  ## Use
