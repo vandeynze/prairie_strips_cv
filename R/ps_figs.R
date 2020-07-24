@@ -21,15 +21,15 @@ theme_update(
 
 
 # Read data
-df_supply_logit <- read_csv(here("predictedsupply_logit.csv"))
+df_supply_logit <- read_csv(here("data/predictedsupply_logit.csv"))
 df_supply_logit
 
-df_supply_probit <- read_csv(here("predictedsupply_probit.csv"))
+df_supply_probit <- read_csv(here("data/predictedsupply_probit.csv"))
 df_supply_probit
 
-df_cost2 <- read_csv(here("predictedcost_integration.csv"))
+df_cost2 <- read_csv(here("data/predictedcost_integration.csv"))
 
-df_probadopt <- read_csv(here("predictedadopt.csv"))
+df_probadopt <- read_csv(here("data/predictedadopt.csv"))
 df_probadopt # Too wide
 df_probadopt <-
   df_probadopt %>%
@@ -174,7 +174,8 @@ ggsave("figs/fig1.png", width = 6, height = 4)
       axis.text = element_text(size = 8),
       axis.title = element_text(size = 10),
       axis.title.y = element_text(margin = margin(1,10,1,1)),
-      legend.text = element_text(size = 10)
+      legend.text = element_text(size = 10),
+      legend.title = element_text(size = 10)
     )
 )
 ggsave("figs/fig2.png", width = 6, height = 4)
@@ -213,16 +214,17 @@ ggsave("figs/fig2.png", width = 6, height = 4)
     # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL, guide = NULL) +
     scale_x_continuous(labels = scales::label_comma(), breaks = 5e4*c(0:6)) +
     scale_y_continuous(labels = scales::label_dollar(scale = 0.000001), breaks = 2.5e7*c(0:6)) +
-    # scale_linetype_discrete(breaks = c("solid", "dotted")) +
+    scale_linetype_discrete(NULL) +
     labs(
       x = "Additional Cropland Converted to Prairie Strips [Acres]",
       y = "Annual Program Cost [Millions USD]"
     ) +
     theme(
-      axis.text = element_text(size = 12),
-      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
       axis.title.y = element_text(margin = margin(1,10,1,1)),
-      legend.text = element_text(size = 14)
+      legend.text = element_text(size = 10),
+      legend.title = element_text(size = 10)
     )
 )
 ggsave("figs/fig3.png", width = 6, height = 4)
@@ -256,10 +258,11 @@ ggsave("figs/fig3.png", width = 6, height = 4)
       y = "Payment Offer [USD/Acre]"
     ) +
     theme(
-      axis.text = element_text(size = 12),
-      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
       axis.title.y = element_text(margin = margin(1,10,1,1)),
-      legend.text = element_text(size = 14)
+      legend.text = element_text(size = 10),
+      legend.title = element_text(size = 10)
     )
 )
 ggsave("figs/figa1.png", width = 6, height = 4)
@@ -299,10 +302,11 @@ ggsave("figs/figa1.png", width = 6, height = 4)
       y = "Payment Offer [USD/Acre]"
     ) +
     theme(
-      axis.text = element_text(size = 12),
-      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
       axis.title.y = element_text(margin = margin(1,10,1,1)),
-      legend.text = element_text(size = 14)
+      legend.text = element_text(size = 10),
+      legend.title = element_text(size = 10)
     )
 )
 ggsave("figs/figa2.png", width = 6, height = 4)
@@ -352,10 +356,11 @@ ggsave("figs/figa2.png", width = 6, height = 4)
       y = "Annual Program Cost [Millions USD]"
     ) +
     theme(
-      axis.text = element_text(size = 12),
-      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 8),
+      axis.title = element_text(size = 10),
       axis.title.y = element_text(margin = margin(1,10,1,1)),
-      legend.text = element_text(size = 14)
+      legend.text = element_text(size = 10),
+      legend.title = element_text(size = 10)
     )
 )
 
