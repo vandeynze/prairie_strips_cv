@@ -117,7 +117,7 @@ df_supply_probit %>% print(n = Inf)
         linetype = weights
       ),
       size = 0.75,
-      color = RColorBrewer::brewer.pal(3, "Set1")[2]
+      # color = RColorBrewer::brewer.pal(3, "Set1")[2]
     ) +
     # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL) +
     scale_x_continuous(limits = c(0, 1), breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1)) +
@@ -144,28 +144,31 @@ ggsave("figs/fig1.png", width = 6, height = 4)
       df_supply_logit,
       aes(
         x = acres, 
-        y = offer, 
-        color = state
+        y = offer,
+        linetype = state,
+        shape = state,
+        # color = state
       )
     ) + 
     geom_line(
       aes(
-        linetype = I(state != "total") %>% as.character()
+        # linetype = I(state != "total") %>% as.character()
       ),
       size = 0.5
     ) +
     geom_point(
       aes(
-        shape = state
+        # shape = state
       ),
       size = 1.5,
       fill = "white"
     ) +
-    scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL) +
+    # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL) +
     scale_x_continuous(labels = scales::label_comma()) +
     scale_y_continuous(labels = scales::label_dollar(), limits = c(0, 540), breaks = c(0, 100, 200, 300, 400, 500)) +
     scale_shape_manual(values = c(22, 21, 23, 24, 19), name = NULL, labels = str_to_sentence) +
-    scale_linetype_discrete(breaks = c("solid", "dotted")) +
+    scale_linetype_manual(values = rev(1:5), name = NULL, labels = str_to_sentence) +
+    # scale_linetype_discrete(breaks = c("solid", "dotted")) +
     labs(
       x = "Cropland Converted to Prairie Strips [Acres]",
       y = "Payment Offer [USD/Acre]"
@@ -189,7 +192,8 @@ ggsave("figs/fig2.png", width = 6, height = 4)
       aes(
         ymin = cost_lb, ymax = cost_ub, x = acres_add
       ),
-      fill = "red",
+      # fill = "red",
+      fill = "grey50",
       alpha = 0.4,
       color = NA
     ) +
@@ -200,7 +204,7 @@ ggsave("figs/fig2.png", width = 6, height = 4)
         y = cost_lb
       ),
       size = 1.2,
-      color = "#E41A1C"
+      # color = "#E41A1C"
     ) +
     geom_line(
       aes(
@@ -209,7 +213,7 @@ ggsave("figs/fig2.png", width = 6, height = 4)
         y = cost_ub
       ),
       size = 1.2,
-      color = "#E41A1C"
+      # color = "#E41A1C"
     ) +
     # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL, guide = NULL) +
     scale_x_continuous(labels = scales::label_comma(), breaks = 5e4*c(0:6)) +
@@ -247,7 +251,7 @@ ggsave("figs/fig3.png", width = 6, height = 4)
         linetype = weights
       ),
       size = 1.5,
-      color = RColorBrewer::brewer.pal(3, "Set1")[2]
+      # color = RColorBrewer::brewer.pal(3, "Set1")[2]
     ) +
     # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL) +
     scale_x_continuous(limits = c(0, 1), breaks = c(0, 0.2, 0.4, 0.6, 0.8, 1)) +
@@ -276,12 +280,13 @@ ggsave("figs/figa1.png", width = 6, height = 4)
       aes(
         x = acres, 
         y = offer, 
-        color = state
+        # color = state
       )
     ) + 
     geom_line(
       aes(
-        linetype = I(state != "total") %>% as.character()
+        # linetype = I(state != "total") %>% as.character()
+        linetype = state
       ),
       size = 1
     ) +
@@ -292,11 +297,12 @@ ggsave("figs/figa1.png", width = 6, height = 4)
       size = 2,
       fill = "white"
     ) +
-    scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL) +
+    # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL) +
     scale_x_continuous(labels = scales::label_comma()) +
     scale_y_continuous(labels = scales::label_dollar(), limits = c(0, 540), breaks = c(0, 100, 200, 300, 400, 500)) +
     scale_shape_manual(values = c(22, 21, 23, 24, 19), name = NULL, labels = str_to_sentence) +
-    scale_linetype_discrete(breaks = c("solid", "dotted")) +
+    scale_linetype_manual(values = rev(1:5), name = NULL, labels = str_to_sentence) +
+    # scale_linetype_discrete(breaks = c("solid", "dotted")) +
     labs(
       x = "Cropland Converted to Prairie Strips [Acres]",
       y = "Payment Offer [USD/Acre]"
@@ -323,7 +329,7 @@ ggsave("figs/figa2.png", width = 6, height = 4)
         ),
       aes(
         x = acres - min(acres), 
-        color = state
+        # color = state
       )
     ) + 
     # geom_ribbon(
@@ -347,7 +353,7 @@ ggsave("figs/figa2.png", width = 6, height = 4)
     #   size = 1.2,
     #   linetype = "dashed"
     # ) +
-    scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL, guide = NULL) +
+    # scale_color_brewer(palette = "Set1", labels = str_to_sentence, name = NULL, guide = NULL) +
     scale_x_continuous(labels = scales::label_comma(), breaks = 5e4*c(0:8)) +
     scale_y_continuous(labels = scales::label_dollar(scale = 0.000001), breaks = 2.5e7*c(0:7)) +
     scale_linetype_discrete(breaks = c("solid", "dotted")) +
