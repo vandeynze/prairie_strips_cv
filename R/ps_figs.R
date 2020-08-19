@@ -135,7 +135,7 @@ df_supply_probit %>% print(n = Inf)
       legend.title = element_text(size = 10)
     )
 )
-ggsave("figs/fig1.png", width = 6, height = 4)
+ggsave("figs/fig1.png", width = 6, height = 4, dpi = 600)
 
 # Figure 2
 (
@@ -181,7 +181,7 @@ ggsave("figs/fig1.png", width = 6, height = 4)
       legend.title = element_text(size = 10)
     )
 )
-ggsave("figs/fig2.png", width = 6, height = 4)
+ggsave("figs/fig2.png", width = 6, height = 4, dpi = 600)
 
 
 # Figure 3
@@ -231,7 +231,7 @@ ggsave("figs/fig2.png", width = 6, height = 4)
       legend.title = element_text(size = 10)
     )
 )
-ggsave("figs/fig3.png", width = 6, height = 4)
+ggsave("figs/fig3.png", width = 6, height = 4, dpi = 600)
 
 
 # Build draft figure ====
@@ -269,7 +269,7 @@ ggsave("figs/fig3.png", width = 6, height = 4)
       legend.title = element_text(size = 10)
     )
 )
-ggsave("figs/figa1.png", width = 6, height = 4)
+ggsave("figs/figa1.png", width = 6, height = 4, dpi = 600)
 
 
 # Figure 2a
@@ -315,7 +315,7 @@ ggsave("figs/figa1.png", width = 6, height = 4)
       legend.title = element_text(size = 10)
     )
 )
-ggsave("figs/figa2.png", width = 6, height = 4)
+ggsave("figs/figa2.png", width = 6, height = 4, dpi = 600)
 
 
 # Figure 3a
@@ -370,5 +370,5 @@ ggsave("figs/figa2.png", width = 6, height = 4)
     )
 )
 
-ggsave("figs/figa3.png", width = 6, height = 4)
+ggsave("figs/figa3.png", width = 6, height = 4, dpi = 600)
 
